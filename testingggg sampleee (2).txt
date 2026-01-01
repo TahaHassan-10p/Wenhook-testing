@@ -1,0 +1,18 @@
+testingggg sampleee
+
+
+indexing and summarization apis
+database optimization
+ai based mapping of test cases in suites, want ai based mapping of test cases into sections.
+
+one single api calls for loading test cases. milestones
+
+
+look at the dashboard,
+
+always make the least api calls and return least data, as on the server deployed network latency slows down things.
+
+
+middleeast gcp cloud location
+
+for vertex us central one
