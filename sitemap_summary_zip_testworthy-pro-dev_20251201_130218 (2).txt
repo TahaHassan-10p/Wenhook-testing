@@ -1,0 +1,152 @@
+{
+  "sitemap": {
+    "Getting Started": {
+      "Overview": "Introduction to TestWorthy Pro, including system purpose and high-level architecture.",
+      "Quick Start (Local Development)": "Step-by-step guide for setting up the backend and frontend locally without Docker, including prerequisites, environment variable setup, database initialization, and troubleshooting.",
+      "Quick Start (Docker)": "Instructions for deploying the application using Docker and Docker Compose, referencing the deploy.sh script, .env configuration, and available Docker Compose profiles.",
+      "Production Deployment": {
+        "Internal Network Deployment": "Detailed guide for deploying on an internal Ubuntu server using docker-compose.production.yml, configuring firewalls, systemd service, and automated backups.",
+        "Public/SSL Deployment": "Instructions for deploying with Nginx as a reverse proxy, SSL setup with certbot, and domain/firewall configuration."
+      }
+    },
+    "System Architecture": {
+      "Architecture Overview": "Description of the main components: frontend (React/Vite), backend (FastAPI), PostgreSQL database, Nginx reverse proxy (optional), and networking.",
+      "Backend Structure": {
+        "Project Structure": "Directory tree and explanation of backend modules: api (routes), auth (JWT), core (config/permissions), database (models/session), schemas (Pydantic), services (business logic), migrations, and utilities.",
+        "Database Management": {
+          "Schema Definition": "Explanation of code-first SQLAlchemy models as the single source of truth, auto-creation of tables, and seed/reset scripts.",
+          "Migrations": "Alembic migration workflow, manual SQL migrations, and handling of PostgreSQL ENUMs.",
+          "Seeding and Demo Data": "How to use master_seed.py to populate demo users and projects."
+        },
+        "Authentication & Authorization": "JWT-based authentication, refresh tokens, role-based access control (RBAC), permissions mapping, and security best practices.",
+        "API Routing": "Organization of modular FastAPI routers, OpenAPI/Swagger documentation, and health check endpoints."
+      },
+      "Frontend Structure": {
+        "Project Structure": "Directory overview, entry points (index.html, main.tsx), and global styles (Tailwind CSS, design tokens).",
+        "Component Library": "Use of shadcn/ui (Radix UI), custom UI components, and design system integration.",
+        "Routing and State Management": "Custom client-side routing, React Query for server state, and code splitting with React.lazy.",
+        "Theming and Accessibility": "Theme switching (light/dark), CSS variables, and accessibility features."
+      },
+      "DevOps & Deployment": {
+        "Docker Architecture": "Service definitions for development and production, environment variable management, health checks, and volume/network configuration.",
+        "Deployment Automation": "deploy.sh and ubuntu-setup.sh scripts for building, starting, stopping, and maintaining the application.",
+        "System Optimization": "Performance tuning of system limits, kernel parameters, and Docker resource allocation.",
+        "Backup and Restore": "Automated backup scripts, cron jobs, and database/file restoration procedures.",
+        "Monitoring and Troubleshooting": "Health checks, log monitoring, common error resolution, and security considerations."
+      }
+    },
+    "Core Features": {
+      "Test Management": {
+        "Projects": "CRUD operations, member management, statistics, and health metrics.",
+        "Milestones": "CRUD, association with test cases/runs, and referential integrity checks.",
+        "Test Suites": "CRUD and organization of test cases.",
+        "Test Cases": "CRUD, versioning, attachments, comments, custom fields, and statistics.",
+        "Test Plans": "CRUD, bulk management of plan items, and ordering.",
+        "Test Runs & Executions": "Manual and automated runs, execution result tracking, status updates, and defect logging.",
+        "Defects": "CRUD, linkage to test cases and runs, and audit trail.",
+        "Comments & Activities": "Commenting system, activity logging, and auditability.",
+        "Custom Fields": "Schema extension for test cases and other entities, server-side validation, and flexible value storage."
+      },
+      "AI-Powered Features": {
+        "AI Project Import": "Workflow for importing a codebase (ZIP), token estimation, chunking, AI-driven test case generation, aggregation, and project creation.",
+        "AI Providers": "Modular support for OpenAI, Gemini, Anthropic, Vertex, and OpenRouter with unified client and provider-specific configuration.",
+        "Prompt Management": "Centralized prompt templates, master prompt library, and prompt engineering guidelines.",
+        "AI Healing": "Test case improvement via AI, side-by-side diff viewer, and versioned aggregate management.",
+        "Token & Cost Estimation": "Token counting per model/provider, context window validation, and cost calculation based on pricing config.",
+        "Rate Limiting & Usage Tracking": "Token-aware, adaptive rate limiter, usage statistics, and budget enforcement.",
+        "Performance Optimization": "Backend N+1 query prevention, frontend data virtualization, caching, and polling strategies."
+      },
+      "Integrations": {
+        "Repository Integrations": "GitHub/GitLab repository configuration, webhook setup, and secure secret management.",
+        "Self-Healing Test Cases": "Pull request analysis, AI-generated test case deltas, integration logs, and manual/automated application of recommendations.",
+        "Webhook Management": "Webhook endpoints for GitHub/GitLab, signature verification, background task processing, and event logs.",
+        "Jira/Slack (Planned)": "Placeholders for future integrations with issue trackers and messaging platforms."
+      },
+      "Reporting & Analytics": {
+        "Dashboard": "Aggregated statistics, recent activity, project health, and visualizations (charts, metrics).",
+        "Project Analytics": "Time-series trends, test case distributions, and execution status breakdowns.",
+        "Execution Reports": "Detailed run-level reports, pass/fail rates, and export options.",
+        "Custom Reports (Planned)": "UI for generating and downloading custom reports."
+      },
+      "User & Role Management": {
+        "User Accounts": "CRUD, profile updates, password management, avatar upload, and theme preference.",
+        "Roles & Permissions": "Admin, Project Manager, QA, Developer, Guest roles with customizable permissions.",
+        "User Directory": "Directory view, search/filter, and status management.",
+        "Role-Based Access Control": "Frontend and backend enforcement of permissions, with UI visibility controls."
+      }
+    },
+    "AI & Automation": {
+      "Prompt Engineering Guidelines": "Documentation and examples for prompt design, coding standards, and design system rules for AI.",
+      "Master Prompts Library": "UI and API for managing global and user-specific AI prompt templates.",
+      "AI Model Configuration": "Provider/model selection, API key management, and model capability discovery.",
+      "Token Management": "Accurate token counting, context window enforcement, and usage/cost tracking.",
+      "Rate Limiting": "Adaptive, token-aware rate limiting for AI API calls, with concurrency and backoff handling."
+    },
+    "Integrations & Extensibility": {
+      "Repository Integrations": {
+        "Setup": "Connecting repositories, configuring webhooks, and managing secrets.",
+        "Pull Request Analysis": "Triggering AI analysis on PR events, viewing PR analyses, and applying test case deltas.",
+        "Integration Logs": "Viewing and filtering logs of integration events and errors."
+      },
+      "Custom Fields": "Extending core entities with custom attributes, validation, and UI integration.",
+      "API Documentation": "Auto-generated OpenAPI/Swagger docs, endpoint descriptions, and request/response schemas.",
+      "Webhooks": "Endpoints for external services, signature verification, and background processing."
+    },
+    "Performance & Optimization": {
+      "Performance Optimization Plan": "Identified bottlenecks, phased optimization strategy, and performance targets.",
+      "Backend Optimization": "Eager loading (joinedload), pagination, summary endpoints, and index creation.",
+      "Frontend Optimization": "Virtualized lists, React Query caching, code splitting, and smart polling.",
+      "Advanced Optimizations": "Database indexing, GZip compression, WebSocket support, and server-side filtering/search.",
+      "Monitoring & Maintenance": "Health checks, log monitoring, database backup/restore, and update procedures."
+    },
+    "Developer Reference": {
+      "Backend API": {
+        "API Routes": "Detailed listing and description of all FastAPI endpoints, grouped by entity (projects, cases, runs, AI, integrations, etc.).",
+        "Pydantic Schemas": "Reference for all request/response data models.",
+        "Database Models": "SQLAlchemy model definitions and relationships.",
+        "Services": "Business logic modules (AI, chunking, project import, rate limiting, etc.).",
+        "Migrations": "Alembic migration scripts, manual SQL migrations, and troubleshooting.",
+        "Testing & Debugging": "Test scripts, JSON parsing utilities, and enum synchronization tools."
+      },
+      "Frontend": {
+        "Component Library": "Documentation of custom and third-party UI components (shadcn/ui, Radix, etc.).",
+        "Hooks": "Custom React hooks for polling, data fetching, and state management.",
+        "Services": "API service modules for all entities and features.",
+        "State Management": "React Query setup, cache keys, and invalidation strategies.",
+        "Styling": "Design system variables, Tailwind CSS usage, and theming.",
+        "Testing": "Integration test scripts and mocking strategies."
+      },
+      "DevOps & Automation": {
+        "Deployment Scripts": "deploy.sh, ubuntu-setup.sh, wait-for-postgres.sh, and systemd service setup.",
+        "Docker Compose Files": "Service definitions for development, production, and debug environments.",
+        "Environment Variables": "Comprehensive list of required and optional environment variables for backend and frontend.",
+        "Backup & Restore": "Automated backup scripts, cron jobs, and manual restore procedures.",
+        "System Optimization": "Kernel/network tuning, resource allocation, and troubleshooting common issues."
+      }
+    },
+    "Customer/User Documentation": {
+      "User Guide": {
+        "Logging In & Out": "How to register, log in, and manage sessions.",
+        "Navigating the App": "Overview of the main modules: dashboard, projects, test cases, runs, reports, and settings.",
+        "Managing Projects": "Creating, editing, and deleting projects; adding members; and viewing statistics.",
+        "Working with Test Cases": "Creating, editing, versioning, attaching files, commenting, and defect logging.",
+        "Running Tests": "Manual and automated test runs, marking results, and viewing execution history.",
+        "AI Features": "Using AI to import projects, heal test cases, and manage AI settings.",
+        "Integrations": "Connecting to GitHub, managing webhooks, and applying AI recommendations from PRs.",
+        "Customizing the Experience": "Changing theme, managing profile, and setting preferences.",
+        "Reporting & Analytics": "Viewing dashboards, generating reports, and interpreting analytics.",
+        "Troubleshooting": "Common issues and solutions, including login problems, missing data, and error messages."
+      },
+      "Feature Glossary": "Definitions and explanations for all major features and technical terms.",
+      "FAQ": "Frequently asked questions for both end-users and administrators.",
+      "Support & Feedback": "How to contact support, submit feedback, and report bugs."
+    },
+    "Appendices": {
+      "Third-Party Libraries & Licenses": "List of all open-source libraries and assets used (shadcn/ui, Unsplash, Radix UI, etc.) and their licenses.",
+      "Environment Variables Reference": "Detailed documentation of all environment variables required for backend and frontend.",
+      "Design System & Theming": "CSS variables, color palettes, and guidelines for extending the design system.",
+      "API Reference": "Links to auto-generated Swagger/ReDoc documentation and example requests/responses.",
+      "Changelog & Release Notes": "Summary of major changes, new features, and bug fixes per release."
+    }
+  }
+}
