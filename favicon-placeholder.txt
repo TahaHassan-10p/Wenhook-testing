@@ -1,0 +1,3 @@
+<!-- This is a placeholder for the TestWorthy favicon.
+The actual favicon image should be saved as favicon.ico in the public directory.
+The provided blue star image should be converted to ICO format and placed here. -->
